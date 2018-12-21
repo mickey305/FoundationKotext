@@ -1,0 +1,28 @@
+
+language: java
+
+dist: trusty
+sudo: false
+
+branches:
+  only:
+    - master
+    - develop
+
+env:
+  global:
+    - TRAVIS_ENV=true
+
+before_install:
+ - chmod +x ./gradlew
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+script:
+    - ./gradlew test
