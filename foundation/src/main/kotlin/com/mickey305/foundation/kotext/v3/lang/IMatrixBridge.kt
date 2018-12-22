@@ -9,12 +9,12 @@ import org.apache.commons.math3.fraction.BigFraction
 import java.math.BigDecimal
 import java.math.BigInteger
 
-interface IMatrixBridge<T> where T : Number {
+interface IMatrixBridge {
 
     /**
      * マトリクス変換処理
      */
-    fun Array<Array<T>>.toSquareMatrix(): SquareMatrix<T> {
+    fun <T : Number> Array<Array<T>>.toSquareMatrix(): SquareMatrix<T> {
         if (this.isEmpty() or this.first().isEmpty()) {
             throw UnsupportedOperationException("empty element error")
         }
@@ -29,7 +29,7 @@ interface IMatrixBridge<T> where T : Number {
     /**
      * マトリクス変換処理
      */
-    fun Array<Array<T>>.toMatrix(): Matrix<T> {
+    fun <T : Number> Array<Array<T>>.toMatrix(): Matrix<T> {
         if (this.isEmpty() or this.first().isEmpty()) {
             throw UnsupportedOperationException("empty element error")
         }
@@ -44,12 +44,12 @@ interface IMatrixBridge<T> where T : Number {
     /**
      * 配列変換処理
      */
-    fun Matrix<T>.toArray(): Array<Array<T>> = this.table
+    fun <T : Number> Matrix<T>.toArray(): Array<Array<T>> = this.table
 
     /**
      * 配列変換処理
      */
-    fun SquareMatrix<T>.toArray(): Array<Array<T>> = this.table
+    fun <T : Number> SquareMatrix<T>.toArray(): Array<Array<T>> = this.table
 
     @Suppress("warnings")
     private fun <E : Number> getIni(type: Class<*>): IElementInitializer<E> {

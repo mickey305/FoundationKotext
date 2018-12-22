@@ -6,7 +6,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-class IMatrixBridgeTest : IMatrixBridge<BigFraction> {
+class IMatrixBridgeTest : IMatrixBridge {
 
     @Before
     @Throws(Exception::class)
