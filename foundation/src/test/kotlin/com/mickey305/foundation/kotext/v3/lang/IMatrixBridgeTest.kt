@@ -27,7 +27,7 @@ class IMatrixBridgeTest : IMatrixBridge {
         tbl[1] = arrayOf(BigFraction(11, 10), BigFraction(15, 10), BigFraction(12, 10))
         tbl[2] = arrayOf(BigFraction(23, 10), BigFraction(25, 10), BigFraction(62, 10))
         val matrix = tbl.toSquareMatrix()
-        println(ToStringBuilder.reflectionToString(matrix.toArray()))
-        println(ToStringBuilder.reflectionToString(matrix.createInverseMatrix().toArray()))
+        println(ToStringBuilder.reflectionToString(matrix.toTable()))
+        println(ToStringBuilder.reflectionToString(matrix.createInverseMatrix().toTable()))
     }
 }

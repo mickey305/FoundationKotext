@@ -39,12 +39,12 @@ interface IMatrixBridge {
     /**
      * 配列変換処理
      */
-    fun <T : Number> Matrix<T>.toArray(): Array<Array<T>> = this.table
+    fun <T : Number> Matrix<T>.toTable(): Array<Array<T>> = this.table
 
     /**
      * 配列変換処理
      */
-    fun <T : Number> SquareMatrix<T>.toArray(): Array<Array<T>> = this.table
+    fun <T : Number> SquareMatrix<T>.toTable(): Array<Array<T>> = this.table
 
     @Suppress("warnings")
     private fun <E : Number> getIni(type: Class<*>): IElementInitializer<E> {
