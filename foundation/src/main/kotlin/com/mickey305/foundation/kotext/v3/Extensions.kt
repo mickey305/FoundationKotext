@@ -1,5 +1,7 @@
 package com.mickey305.foundation.kotext.v3
 
+import com.mickey305.foundation.v3.util.StringUtil
+
 // global function definition
 
 /**
@@ -11,3 +13,9 @@ inline fun repeatDecrement(times: Int, action: (Int) -> Unit) {
         action(times - index - 1)
     }
 }
+
+/**
+ * 空白文字・全角スペースを入力文字列の両サイドから除去した文字列を返却する
+ * @return 出力文字列
+ */
+fun String.fastTrim(): String = StringUtil.trim(this)
