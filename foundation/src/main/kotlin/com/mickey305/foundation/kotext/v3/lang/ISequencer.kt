@@ -6,15 +6,15 @@ interface ISequencer {
     /**
      * 繰り返し処理
      */
-    fun Int.times(callback: (Int) -> Unit) = repeat(this) { callback(it) }
+    fun Int.times(action: (Int) -> Unit) = repeat(this) { action(it) }
 
     /**
      * 繰り返し処理
      */
-    fun Int.times(with: With, callback: (Int) -> Unit) {
+    fun Int.times(with: With, action: (Int) -> Unit) {
         when (with) {
-            With.Default -> this.times(callback)
-            With.Reverse -> repeatDecrement(this) { callback(it) }
+            With.Default -> this.times(action)
+            With.Reverse -> repeatDecrement(this) { action(it) }
         }
     }
 
