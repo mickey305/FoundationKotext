@@ -6,7 +6,9 @@ interface ISequencer {
     /**
      * 繰り返し処理
      */
-    fun Int.times(callback: (Int) -> Unit) { repeat(this) { callback(it) } }
+    fun Int.times(callback: (Int) -> Unit) {
+        repeat(this) { callback(it) }
+    }
 
     /**
      * 繰り返し処理

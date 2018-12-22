@@ -21,7 +21,7 @@ class IMatrixBridgeTest : IMatrixBridge<BigFraction> {
     @Test
     @Throws(Exception::class)
     fun testCase_01_01() {
-        val arr = Array(3, {Array(3, {BigFraction.ZERO})})
+        val arr = Array(3, { Array(3, { BigFraction.ZERO }) })
         arr[0] = arrayOf(BigFraction(51, 10), BigFraction(25, 10), BigFraction(12, 10))
         arr[1] = arrayOf(BigFraction(11, 10), BigFraction(15, 10), BigFraction(12, 10))
         arr[2] = arrayOf(BigFraction(23, 10), BigFraction(25, 10), BigFraction(62, 10))
