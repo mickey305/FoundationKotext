@@ -1,6 +1,8 @@
 
 # Overview
 
+[![](https://jitpack.io/v/mickey305/FoundationKotext.svg)](https://jitpack.io/#mickey305/FoundationKotext)
+
 Kotlin Foundation ext library.
 
 ### Repository CI services
