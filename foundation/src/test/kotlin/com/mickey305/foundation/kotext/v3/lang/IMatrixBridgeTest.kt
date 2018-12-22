@@ -1,5 +1,6 @@
 package com.mickey305.foundation.kotext.v3.lang
 
+import com.mickey305.foundation.kotext.v3.createTable
 import org.apache.commons.lang3.builder.ToStringBuilder
 import org.apache.commons.math3.fraction.BigFraction
 import org.junit.After
@@ -21,11 +22,11 @@ class IMatrixBridgeTest : IMatrixBridge {
     @Test
     @Throws(Exception::class)
     fun testCase_01_01() {
-        val arr = Array(3, { Array(3, { BigFraction.ZERO }) })
-        arr[0] = arrayOf(BigFraction(51, 10), BigFraction(25, 10), BigFraction(12, 10))
-        arr[1] = arrayOf(BigFraction(11, 10), BigFraction(15, 10), BigFraction(12, 10))
-        arr[2] = arrayOf(BigFraction(23, 10), BigFraction(25, 10), BigFraction(62, 10))
-        val matrix = arr.toSquareMatrix()
+        val tbl = createTable(3, { BigFraction.ZERO })
+        tbl[0] = arrayOf(BigFraction(51, 10), BigFraction(25, 10), BigFraction(12, 10))
+        tbl[1] = arrayOf(BigFraction(11, 10), BigFraction(15, 10), BigFraction(12, 10))
+        tbl[2] = arrayOf(BigFraction(23, 10), BigFraction(25, 10), BigFraction(62, 10))
+        val matrix = tbl.toSquareMatrix()
         println(ToStringBuilder.reflectionToString(matrix.toArray()))
         println(ToStringBuilder.reflectionToString(matrix.createInverseMatrix().toArray()))
     }

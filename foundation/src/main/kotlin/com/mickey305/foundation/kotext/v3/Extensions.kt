@@ -19,3 +19,12 @@ inline fun repeatDecrement(times: Int, action: (Int) -> Unit) {
  * @return 出力文字列
  */
 fun String.fastTrim(): String = StringUtil.trim(this)
+
+/**
+ * 2次元配列を作成する
+ * @return 2次元配列
+ */
+inline fun <reified T : Number> createTable(size: Int, noinline init: (Int) -> T): Array<Array<T>> {
+    return Array(size, { Array(size, init) })
+}
+
