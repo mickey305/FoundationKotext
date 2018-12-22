@@ -114,10 +114,9 @@ class ExtensionsTest : ISequencer {
         // method benchmark
         val list1 = mutableListOf<Long>()
         val list2 = mutableListOf<Long>()
+        var start: Long
+        var end: Long
         100.times {
-            var start: Long
-            var end: Long
-
             start = System.nanoTime()
             for (data in testData) {
                 data.left.fastTrim()
