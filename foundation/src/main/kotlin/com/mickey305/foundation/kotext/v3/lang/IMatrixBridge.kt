@@ -14,11 +14,9 @@ interface IMatrixBridge {
      * マトリクス変換処理
      */
     fun <T : Number> Array<Array<T>>.toSquareMatrix(): SquareMatrix<T> {
-        if (this.isEmpty() or this.first().isEmpty()) {
-            throw UnsupportedOperationException("empty element error")
-        }
-
+        // get type of T
         val element = this.javaClass.componentType.componentType
+
         val ini = getIni<T>(element)
         val op = getOperator<T>(element)
 
@@ -29,11 +27,9 @@ interface IMatrixBridge {
      * マトリクス変換処理
      */
     fun <T : Number> Array<Array<T>>.toMatrix(): Matrix<T> {
-        if (this.isEmpty() or this.first().isEmpty()) {
-            throw UnsupportedOperationException("empty element error")
-        }
-
+        // get type of T
         val element = this.javaClass.componentType.componentType
+
         val ini = getIni<T>(element)
         val op = getOperator<T>(element)
 
