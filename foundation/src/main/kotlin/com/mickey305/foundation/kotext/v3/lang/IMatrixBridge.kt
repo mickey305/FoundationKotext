@@ -1,13 +1,10 @@
 package com.mickey305.foundation.kotext.v3.lang
 
+import com.mickey305.foundation.kotext.v3.*
 import com.mickey305.foundation.v4.lang.math.Matrix
 import com.mickey305.foundation.v4.lang.math.SquareMatrix
 import com.mickey305.foundation.v4.lang.math.factory.*
 import com.mickey305.foundation.v4.lang.math.operator.IElementInitializer
-import org.apache.commons.lang3.math.Fraction
-import org.apache.commons.math3.fraction.BigFraction
-import java.math.BigDecimal
-import java.math.BigInteger
 
 interface IMatrixBridge {
     /**
@@ -49,16 +46,16 @@ interface IMatrixBridge {
     @Suppress("warnings")
     private fun <E : Number> getIni(type: Class<*>): IElementInitializer<E> {
         val ini = when (type) {
-            Int::class.javaObjectType -> ElementInitializerFactory.intIni()
-            Long::class.javaObjectType -> ElementInitializerFactory.longIni()
-            Short::class.javaObjectType -> ElementInitializerFactory.shortIni()
-            Float::class.javaObjectType -> ElementInitializerFactory.floatIni()
-            Double::class.javaObjectType -> ElementInitializerFactory.doubleIni()
-            Byte::class.javaObjectType -> ElementInitializerFactory.byteIni()
-            BigInteger::class.javaObjectType -> ElementInitializerFactory.bigIntIni()
-            BigDecimal::class.javaObjectType -> ElementInitializerFactory.bigDcmlIni()
-            Fraction::class.javaObjectType -> ElementInitializerFactory.fractionIni()
-            BigFraction::class.javaObjectType -> ElementInitializerFactory.bigFractionIni()
+            Int::class.javaObjectType -> ElmIniFactory.intIni()
+            Long::class.javaObjectType -> ElmIniFactory.longIni()
+            Short::class.javaObjectType -> ElmIniFactory.shortIni()
+            Float::class.javaObjectType -> ElmIniFactory.floatIni()
+            Double::class.javaObjectType -> ElmIniFactory.doubleIni()
+            Byte::class.javaObjectType -> ElmIniFactory.byteIni()
+            BigInteger::class.javaObjectType -> ElmIniFactory.bigIntIni()
+            BigDecimal::class.javaObjectType -> ElmIniFactory.bigDcmlIni()
+            Fraction::class.javaObjectType -> ElmIniFactory.fractionIni()
+            BigFraction::class.javaObjectType -> ElmIniFactory.bigFractionIni()
             else -> throw UnsupportedOperationException("element type error")
         } as IElementInitializer<E>
         return ini

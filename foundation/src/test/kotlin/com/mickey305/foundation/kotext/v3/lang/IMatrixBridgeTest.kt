@@ -1,8 +1,8 @@
 package com.mickey305.foundation.kotext.v3.lang
 
+import com.mickey305.foundation.kotext.v3.BigFraction
 import com.mickey305.foundation.kotext.v3.createTable
 import org.apache.commons.lang3.builder.ToStringBuilder
-import org.apache.commons.math3.fraction.BigFraction
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
