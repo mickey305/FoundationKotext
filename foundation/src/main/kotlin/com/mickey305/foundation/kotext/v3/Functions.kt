@@ -1,5 +1,7 @@
 package com.mickey305.foundation.kotext.v3
 
+import com.mickey305.foundation.v3.util.Log
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // global function definition
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,6 +40,10 @@ inline fun <reified T> lock(lock: ILockable<LockKind>, kind: LockKind = LockKind
     lock.lock(kind)
     try {
         return action()
+    } catch (e: Exception) {
+        // capture error information
+        Log.e(e.message)
+        throw e
     } finally {
         lock.unlock(kind)
     }
