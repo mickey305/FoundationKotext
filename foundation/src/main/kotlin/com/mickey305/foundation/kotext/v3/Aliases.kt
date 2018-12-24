@@ -13,4 +13,6 @@ typealias Fraction = org.apache.commons.lang3.math.Fraction
 typealias BigFraction = org.apache.commons.math3.fraction.BigFraction
 typealias BigDecimal = java.math.BigDecimal
 typealias BigInteger = java.math.BigInteger
+typealias LockKind = com.mickey305.foundation.v3.util.concurrent.LockType
+typealias ILockable<LockKind> = com.mickey305.foundation.v3.util.concurrent.ILockable<LockKind>
 
