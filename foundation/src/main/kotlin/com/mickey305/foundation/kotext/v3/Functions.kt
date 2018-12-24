@@ -26,7 +26,7 @@ inline fun <reified T> iniTable(size: Int, action: () -> T): Array<Array<T>> {
 
 /**
  * ロックタスクを実行する
- * デフォルトは書込み専用ロックを実行する
+ * デフォルトは書込みロックを実行する
  * ```
  * val lockManager = LockManagerFactory.getInstance().get()
  * val lockObj = lockManager.makeDefault()
@@ -34,7 +34,7 @@ inline fun <reified T> iniTable(size: Int, action: () -> T): Array<Array<T>> {
  * ```
  * @return コールバックの結果
  */
-inline fun <T> lock(lock: ILockable<LockKind>, kind: LockKind = LockKind.Write, action: () -> T): T {
+inline fun <reified T> lock(lock: ILockable<LockKind>, kind: LockKind = LockKind.Write, action: () -> T): T {
     lock.lock(kind)
     try {
         return action()
