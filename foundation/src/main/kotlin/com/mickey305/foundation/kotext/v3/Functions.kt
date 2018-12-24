@@ -37,14 +37,17 @@ inline fun <reified T> iniTable(size: Int, action: () -> T): Array<Array<T>> {
  * @return コールバックの結果
  */
 inline fun <reified T> lock(lock: ILockable<LockKind>, kind: LockKind = LockKind.Write, action: () -> T): T {
-    lock.lock(kind)
     try {
+        // lock
+        lock.lock(kind)
+        // sync task invoke
         return action()
     } catch (e: Exception) {
         // capture error information
         Log.e(e.message)
         throw e
     } finally {
+        // always unlock
         lock.unlock(kind)
     }
 }
