@@ -3,8 +3,11 @@ package com.mickey305.foundation.kotext.v3.lang
 import com.mickey305.foundation.kotext.v3.*
 import com.mickey305.foundation.v4.lang.math.Matrix
 import com.mickey305.foundation.v4.lang.math.SquareMatrix
+import com.mickey305.foundation.v4.lang.math.builder.BuilderMatrix
+import com.mickey305.foundation.v4.lang.math.builder.BuilderSquareMatrix
 import com.mickey305.foundation.v4.lang.math.factory.*
 import com.mickey305.foundation.v4.lang.math.operator.IElementInitializer
+import com.mickey305.foundation.v4.lang.math.operator.IOperationFactory
 
 interface IMatrixBridge {
     /**
@@ -46,16 +49,16 @@ interface IMatrixBridge {
     @Suppress("warnings")
     private fun <E : Number> getIni(type: Class<*>): IElementInitializer<E> {
         val ini = when (type) {
-            Int::class.javaObjectType -> ElmIniFactory.intIni()
-            Long::class.javaObjectType -> ElmIniFactory.longIni()
-            Short::class.javaObjectType -> ElmIniFactory.shortIni()
-            Float::class.javaObjectType -> ElmIniFactory.floatIni()
-            Double::class.javaObjectType -> ElmIniFactory.doubleIni()
-            Byte::class.javaObjectType -> ElmIniFactory.byteIni()
-            BigInteger::class.javaObjectType -> ElmIniFactory.bigIntIni()
-            BigDecimal::class.javaObjectType -> ElmIniFactory.bigDcmlIni()
-            Fraction::class.javaObjectType -> ElmIniFactory.fractionIni()
-            BigFraction::class.javaObjectType -> ElmIniFactory.bigFractionIni()
+            Int::class.javaObjectType         -> ElementInitializerIntFactory()
+            Long::class.javaObjectType        -> ElementInitializerLongFactory()
+            Short::class.javaObjectType       -> ElementInitializerShortFactory()
+            Float::class.javaObjectType       -> ElementInitializerFloatFactory()
+            Double::class.javaObjectType      -> ElementInitializerDoubleFactory()
+            Byte::class.javaObjectType        -> ElementInitializerByteFactory()
+            BigInteger::class.javaObjectType  -> ElementInitializerBigIntFactory()
+            BigDecimal::class.javaObjectType  -> ElementInitializerBigDecimalFactory()
+            Fraction::class.javaObjectType    -> ElementInitializerFractionFactory()
+            BigFraction::class.javaObjectType -> ElementInitializerBigFractionFactory()
             else -> throw UnsupportedOperationException("element type error")
         } as IElementInitializer<E>
         return ini
@@ -64,16 +67,16 @@ interface IMatrixBridge {
     @Suppress("warnings")
     private fun <E : Number> getOperator(type: Class<*>): IOperationFactory<E> {
         val op = when (type) {
-            Int::class.javaObjectType -> OperationIntFactory.getInstance()
-            Long::class.javaObjectType -> OperationLongFactory.getInstance()
-            Short::class.javaObjectType -> OperationShortFactory.getInstance()
-            Float::class.javaObjectType -> OperationFloatFactory.getInstance()
-            Double::class.javaObjectType -> OperationDoubleFactory.getInstance()
-            Byte::class.javaObjectType -> OperationByteFactory.getInstance()
-            BigInteger::class.javaObjectType -> OperationBigIntFactory.getInstance()
-            BigDecimal::class.javaObjectType -> OperationBigDecimalFactory.getInstance()
-            Fraction::class.javaObjectType -> OperationFractionFactory.getInstance()
-            BigFraction::class.javaObjectType -> OperationBigFractionFactory.getInstance()
+            Int::class.javaObjectType         -> OperationIntFactory()
+            Long::class.javaObjectType        -> OperationLongFactory()
+            Short::class.javaObjectType       -> OperationShortFactory()
+            Float::class.javaObjectType       -> OperationFloatFactory()
+            Double::class.javaObjectType      -> OperationDoubleFactory()
+            Byte::class.javaObjectType        -> OperationByteFactory()
+            BigInteger::class.javaObjectType  -> OperationBigIntFactory()
+            BigDecimal::class.javaObjectType  -> OperationBigDecimalFactory()
+            Fraction::class.javaObjectType    -> OperationFractionFactory()
+            BigFraction::class.javaObjectType -> OperationBigFractionFactory()
             else -> throw UnsupportedOperationException("element type error")
         } as IOperationFactory<E>
         return op
