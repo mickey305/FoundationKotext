@@ -22,7 +22,7 @@ class IMatrixBridgeTest : IMatrixBridge, IBigFraction {
     @Test
     @Throws(Exception::class)
     fun testCase_01_01() {
-        val tbl = iniTable(3, { BigFraction.ZERO })
+        val tbl = iniTable(3) { BigFraction.ZERO }
         tbl[0] = arrayOf(51 of 10, 25 of 10, 12 of 10)
         tbl[1] = arrayOf(11 of 10, 15 of 10, 12 of 10)
         tbl[2] = arrayOf(23 of 10, 25 of 10, 62 of 10)
