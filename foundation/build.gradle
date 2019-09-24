@@ -15,7 +15,7 @@ plugins {
 }
 
 group 'com.mickey305'
-version '0.0.5'
+version '0.0.6'
 
 apply plugin: 'kotlin'
 
@@ -36,6 +36,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 gradle.projectsEvaluated {
     tasks.withType(JavaCompile) {
+        //options.compilerArgs << "-Xlint:all"
         options.compilerArgs << "-Xlint:none"
         options.encoding = javaEncoding
     }
@@ -53,5 +54,5 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version" as Object
     testCompile    group: 'junit'               , name: 'junit'     , version: '4.12'
-    implementation group: 'com.github.mickey305', name: 'Foundation', version: '0.6.40-beta'
+    implementation group: 'com.github.mickey305', name: 'Foundation', version: '0.6.41-beta'
 }
