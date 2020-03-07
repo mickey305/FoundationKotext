@@ -1,0 +1,58 @@
+
+# Normalize line endings to LF.
+*             text eol=lf
+
+*.css         text
+*.gradle      text
+*.html        text
+*.js          text
+*.json        text
+*.md          text
+*.properties  text
+*.txt         text
+*.text        text
+*.xml         text
+*.yml         text
+*.keep        text
+*.kt          text eol=lf
+*.scala       text eol=lf
+*.java        text eol=lf
+*.jsh         text eol=lf
+*.sh          text eol=lf
+*.bat         text eol=crlf
+
+# Ensure that line endings for files are not modified. (-text)
+*.bin           -text
+*.dat           -text
+*.exec          -text
+*.idx           -text
+*.lock          -text
+*.MF            -text
+*.options       -text
+*.svg           -text
+*.at            -text
+*.keystream     -text
+*.kotlin_module -text
+*.len           -text
+*.tab           -text
+*.tab_i         -text
+
+# Ensure the following are treated as binary. (-diff -text)
+*.class       binary
+*.jar         binary
+*.war         binary
+*.ear         binary
+*.tar         binary
+*.gz          binary
+*.pdf         binary
+*.pdx         binary
+*.xls         binary
+*.xlsx        binary
+*.xlsm        binary
+*.xlsb        binary
+*.zip         binary
+*.gif         binary
+*.jpeg        binary
+*.jpg         binary
+*.png         binary
+*.vsd         binary
