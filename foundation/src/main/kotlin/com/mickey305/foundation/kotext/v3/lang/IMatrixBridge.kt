@@ -20,7 +20,7 @@ interface IMatrixBridge {
         val ini = getIni<T>(element)
         val op = getOperator<T>(element)
 
-        return BuilderSquareMatrix<T>().initializer(ini).operator(op).cookbook({ this }).build()
+        return BuilderSquareMatrix<T>().initializer(ini).operator(op).cookbook { this }.build()
     }
 
     /**
@@ -33,7 +33,7 @@ interface IMatrixBridge {
         val ini = getIni<T>(element)
         val op = getOperator<T>(element)
 
-        return BuilderMatrix<T>().initializer(ini).operator(op).cookbook({ this }).build()
+        return BuilderMatrix<T>().initializer(ini).operator(op).cookbook { this }.build()
     }
 
     /**
